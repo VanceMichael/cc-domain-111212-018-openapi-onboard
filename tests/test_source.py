@@ -87,9 +87,9 @@ class SourceTests(unittest.TestCase):
 
     def test_demo_reaches_source_and_archive(self):
         report = app.demo()
-        self.assertEqual(report['captures'], 1)
-        self.assertEqual(report['requests'], 1)
-        self.assertTrue(report['same_capture'])
+        self.assertEqual(report['legacy_inspect']['captures'], 1)
+        self.assertEqual(report['trials']['eligible_plan']['executed_count'], 2)
+        self.assertTrue(report['legacy_inspect']['same_capture'])
 
 if __name__ == '__main__':
     unittest.main()
